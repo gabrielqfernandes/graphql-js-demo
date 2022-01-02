@@ -1,0 +1,9 @@
+type Class {
+  id: ID!
+  name: String!
+  occurDate: DateTime!
+}
+
+type Query {
+  classes: [Class!]!
+}
