@@ -1,0 +1,6 @@
+scalar DateTime
+
+type DeleteResult {
+  status: String!
+  message: String!
+}

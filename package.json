@@ -7,12 +7,12 @@
   "description": "Praticing Graphql concets.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/graphql-api-demo"
+    "url": "https://github.com/gabrielFernandes-dev/graphql-api-demo"
   },
   "scripts": {
     "lint:format": "eslint src/ --fix",
     "lint:check": "eslint src/",
-    "serve": "nodemon src/index.js",
+    "serve": "nodemon -e js,gql,graphql src/index.js",
     "start": "node src/index.js"
   },
   "dependencies": {

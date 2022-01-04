@@ -2,8 +2,8 @@ const { GraphQLScalarType, Kind } = require('graphql');
 
 module.exports = {
   DateTime: new GraphQLScalarType({
-    name: 'Date',
-    description: 'Date custom scalar type',
+    name: 'DateTime',
+    description: 'DateTime custom scalar type',
     serialize(value) {
       return new Date(value).toISOString();
     },
