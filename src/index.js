@@ -1,4 +1,5 @@
 const { ApolloServer } = require('apollo-server');
+const { connect } = require('mongoose');
 const typeDefs = require('./type-defs');
 const resolvers = require('./resolvers');
 
@@ -11,8 +12,23 @@ const options = {
   port: process.env.PORT || 8080,
 };
 
-server
-  .listen(options)
-  .then(({ port }) =>
-    console.log(`Serving on port ${port}, awaiting for incoming requests 🚀`),
-  );
+async function init() {
+  try {
+    await connect(
+      process.env.MONGO_URI || 'mongodb://localhost:27017/graphql-db',
+      { useNewUrlParser: true },
+    );
+    console.log('Database connected 🥬');
+    server
+      .listen(options)
+      .then(({ port }) =>
+        console.log(
+          `Serving on port ${port}, awaiting for incoming requests 🚀`,
+        ),
+      );
+  } catch (initErr) {
+    console.error('[InitializationErr] - \n', initErr);
+  }
+}
+
+init();
