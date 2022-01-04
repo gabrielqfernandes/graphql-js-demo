@@ -1,9 +1,22 @@
 type Class {
   id: ID!
   name: String!
+  teacher: String!
   occurDate: DateTime!
 }
 
+input ClassInput {
+  name: String
+  teacher: String
+  occurDate: DateTime
+}
+
 type Query {
-  classes: [Class!]!
+  findClasses: [Class!]!
+}
+
+type Mutation {
+  createClass(classSession: ClassInput!): Class!
+  updateClass(id: ID!, body: ClassInput!): Class!
+  deleteClass(id: ID!): DeleteResult!
 }
