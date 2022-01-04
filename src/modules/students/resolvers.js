@@ -16,13 +16,21 @@ module.exports = {
       return await Student.create(student);
     },
     async updateStudent(_, { id, body }) {
-      return await Student.updateOne(id, body, {
+      return await Student.updateOne({ id }, body, {
         runValidators: true,
         new: true,
       });
     },
     async deleteStudent(_, { id }) {
-      return await Student.deleteOne(id);
+      try {
+        const { deletedCount } = await Student.deleteOne({ id });
+        return { status: 'success', message: `rows deleted ${deletedCount}` };
+      } catch (err) {
+        return {
+          status: 'fail',
+          message: `error trying to delete student id:${id}`,
+        };
+      }
     },
   },
 };

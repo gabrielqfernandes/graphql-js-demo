@@ -12,7 +12,7 @@ input StudentInput {
   name: String
   email: String
   age: Int
-  signedTo: [ID]!
+  signedTo: [ID]
 }
 
 type Query {
