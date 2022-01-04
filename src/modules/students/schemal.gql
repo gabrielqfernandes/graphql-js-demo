@@ -4,8 +4,23 @@ type Student {
   email: String!
   age: Int!
   signedTo: [Class!]!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+input StudentInput {
+  name: String
+  email: String
+  age: Int
+  signedTo: [ID]!
 }
 
 type Query {
   students: [Student!]!
+}
+
+type Mutation {
+  createStudent(student: StudentInput!): Student!
+  updateStudent(id: ID, body: StudentInput): Student!
+  deleteStudent(id: ID): DeleteResult!
 }
