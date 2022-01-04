@@ -9,6 +9,7 @@ const schema = new Schema(
     email: {
       type: Schema.Types.String,
       required: [true, 'A student must have an email'],
+      unique: true,
     },
     age: {
       type: Schema.Types.Number,
