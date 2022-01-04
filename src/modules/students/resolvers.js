@@ -7,7 +7,7 @@ module.exports = {
     },
   },
   Query: {
-    async students() {
+    async findStudents() {
       return await Student.find().populate('signedTo');
     },
   },

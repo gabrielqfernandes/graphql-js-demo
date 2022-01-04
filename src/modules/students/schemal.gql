@@ -16,7 +16,7 @@ input StudentInput {
 }
 
 type Query {
-  students: [Student!]!
+  findStudents: [Student!]!
 }
 
 type Mutation {
