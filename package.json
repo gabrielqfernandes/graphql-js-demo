@@ -4,7 +4,7 @@
   "main": "index.js",
   "author": "Gabriel Fernandes <gabriel.work076@gmail.com>",
   "license": "MIT",
-  "description": "Praticing Graphql concets.",
+  "description": "Praticing Graphql concepts.",
   "repository": {
     "type": "git",
     "url": "https://github.com/gabrielFernandes-dev/graphql-api-demo"
