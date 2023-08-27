@@ -1,23 +1,33 @@
-# GraphQL Api Demo
+<h1 align=center>GraphQL Api Demo</h1>
 
-**Requirements:**
+## `Description`
 
-- NodeJs & Mongodb (Atlas Cluster) for running locally.
-- Docker & Docker Compose for virtualized execution.
+Simple CRUD app for a Gym Management System context that which addresses the implementation of Mongoose and Apollo-Server in Node.js.
+<br>
 
-### Installation
+## `Requirements`
+- Docker & Docker-Compose
+
+## `Installation`
 
 ```sh
 npm install
-
 # or if you're usign yarn
-
 yarn
 ```
-# 
 
-**Examples**
-### Classes
+## `Running`
+
+```sh
+docker-compose up -d && docker-compose logs -f api
+```
+
+## `Available Resources`
+
+<details>
+  <summary><h3>Classes</h3></summary>
+
+
 ```graphql
 query GetClasses {
   findClasses {
@@ -52,8 +62,11 @@ mutation DeleteClass {
   }
 }
 ```
-#
-### Students  
+</details>
+
+<details>
+  <summary><h3>Students</h3></summary>
+
 ```graphql
 query FindStudents {
   findStudents {
@@ -107,3 +120,4 @@ mutation DeleteStudent {
   }
 }
 ```
+</details>
